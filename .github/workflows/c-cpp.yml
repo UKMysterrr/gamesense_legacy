@@ -1,0 +1,36 @@
+name: C++ Compilation with DirectX SDK
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Install Chocolatey
+      run: |
+        Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+    - name: Install DirectX SDK
+      run: |
+        choco install directx-sdk -y
+        echo "DirectX SDK Installed at: $(Get-ChildItem -Path 'C:\Program Files (x86)\Windows Kits\*' -Filter 'Windows Kits' -Recurse | Select-Object -ExpandProperty FullName)"
+
+    - name: Setup MSBuild environment
+      shell: cmd
+      run: |
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
+
+    - name: Build Solution
+      run: |
+        msbuild /p:Configuration=Release /p:Platform=Win32 gamemesense.sln
+        msbuild /p:Configuration=Beta /p:Platform=Win32 gamemesense.sln
