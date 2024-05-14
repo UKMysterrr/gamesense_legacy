@@ -164,24 +164,6 @@ public:
 			parent->AddChild( this );
 	};
 
-	// Copy constructor
-	CBaseGroup(const CBaseGroup& other) {
-		m_options = other.m_options;
-		m_name = other.m_name;
-		m_json = other.m_json;
-		m_json_default_cfg = other.m_json_default_cfg;
-		m_children = other.m_children;
-	}
-
-	// Move constructor
-	CBaseGroup(CBaseGroup&& other) noexcept {
-		m_options = std::move(other.m_options);
-		m_name = other.m_name;
-		m_json = std::move(other.m_json);
-		m_json_default_cfg = std::move(other.m_json_default_cfg);
-		m_children = std::move(other.m_children);
-	}
-
 protected:
 	template < typename T, class... Types >
 	auto AddOption( const char* name, Types&& ... args ) -> T* {
