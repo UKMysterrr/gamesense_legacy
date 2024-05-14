@@ -7,38 +7,20 @@ on:
     pull_request:
         branches:
             - main
-
 jobs:
     build:
         runs-on: windows-2019
 
         steps:
-            - name: Checkout repository
-              uses: actions/checkout@v2
+            - uses: actions/checkout@v2
 
-            - name: Set up C/C++ environment
+            - name: Set up MSVC
               uses: microsoft/setup-msbuild@v1.0.2
 
-            - name: Install CMake
-              uses: microsoft/setup-cmake@v1.0.0
-
-            - name: Configure CMake
-              run: cmake -B build
-
-            - name: Build DLL versions
+            - name: Build DLL versions of gamemesense.sln
               run: |
-                cmake --build build --config Release -v
-                cmake --build build --config Stable -v
-                cmake --build build --config Developer -v
-                cmake --build build --config Beta -v
-
-            - name: Upload DLL artifacts
-              uses: actions/upload-artifact@v2
-              with:
-                name: dll-artifacts
-                path: |
-                  ./build/Release/*.dll
-                  ./build/Stable/*.dll
-                  ./build/Developer/*.dll
-                  ./build/Beta/*.dll
+                msbuild gamemesense.sln /p:Configuration=Release /p:Platform=x86
+                msbuild gamemesense.sln /p:Configuration=Developer /p:Platform=x86
+                msbuild gamemesense.sln /p:Configuration=Beta /p:Platform=x86
+                msbuild gamemesense.sln /p:Configuration=Stable /p:Platform=x86
 
