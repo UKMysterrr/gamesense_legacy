@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <sstream>
-#include <vector>
+#include <cmath>
 
 #include "../SDK/sdk.hpp"
 #include "../SDK/Valve/vector4d.hpp"
