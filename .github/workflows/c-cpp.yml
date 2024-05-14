@@ -20,7 +20,4 @@ jobs:
             - name: Build DLL versions of gamemesense.sln
               run: |
                 msbuild gamemesense.sln /p:Configuration=Release /p:Platform=x86
-                msbuild gamemesense.sln /p:Configuration=Developer /p:Platform=x86
-                msbuild gamemesense.sln /p:Configuration=Beta /p:Platform=x86
-                msbuild gamemesense.sln /p:Configuration=Stable /p:Platform=x86
 
