@@ -1,6 +1,4 @@
 #pragma once
-#define _USE_MATH_DEFINES
-#include <cmath>
 #include <string>
 #include <sstream>
 
@@ -79,8 +77,10 @@ enum ETextures : int {
 namespace Render {
 	namespace DirectX {
 
-		inline XM_CONSTEXPR float XMConvertToRadians( float fDegrees ) { return fDegrees * ( M_PI / 180.0f ); }
-		inline XM_CONSTEXPR float XMConvertToDegrees( float fRadians ) { return fRadians * ( 180.0f / M_PI ); }
+		inline constexpr float XMConvertToRadians( float fDegrees ) { return fDegrees * ( M_PI / 180.0f ); }
+		inline constexpr float XMConvertToDegrees( float fRadians ) { return fRadians * ( 180.0f / M_PI ); }
+
+		template inline 
 
 		extern IDirect3DDevice9* device;
 		extern IDirect3DStateBlock9* state_block;
