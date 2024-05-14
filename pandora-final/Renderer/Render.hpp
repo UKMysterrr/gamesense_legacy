@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <sstream>
+#include <vector>
 
 #include "../SDK/sdk.hpp"
 #include "../SDK/Valve/vector4d.hpp"
@@ -76,9 +77,10 @@ enum ETextures : int {
 
 namespace Render {
 	namespace DirectX {
+
 		inline XM_CONSTEXPR float XMConvertToRadians( float fDegrees ) { return fDegrees * ( M_PI / 180.0f ); }
 		inline XM_CONSTEXPR float XMConvertToDegrees( float fRadians ) { return fRadians * ( 180.0f / M_PI ); }
-		
+
 		extern IDirect3DDevice9* device;
 		extern IDirect3DStateBlock9* state_block;
 		extern IDirect3DVertexDeclaration9* vert_dec;
