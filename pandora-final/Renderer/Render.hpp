@@ -1,7 +1,8 @@
 #pragma once
+#define _USE_MATH_DEFINES
+#include <cmath>
 #include <string>
 #include <sstream>
-#include <cmath>
 
 #include "../SDK/sdk.hpp"
 #include "../SDK/Valve/vector4d.hpp"
