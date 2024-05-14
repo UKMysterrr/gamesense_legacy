@@ -80,8 +80,6 @@ namespace Render {
 		inline constexpr float XMConvertToRadians( float fDegrees ) { return fDegrees * ( M_PI / 180.0f ); }
 		inline constexpr float XMConvertToDegrees( float fRadians ) { return fRadians * ( 180.0f / M_PI ); }
 
-		template inline 
-
 		extern IDirect3DDevice9* device;
 		extern IDirect3DStateBlock9* state_block;
 		extern IDirect3DVertexDeclaration9* vert_dec;
