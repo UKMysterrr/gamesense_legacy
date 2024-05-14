@@ -20,15 +20,13 @@ jobs:
       run: |
         Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
+    - name: Install MSBuild
+      run: choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
+
     - name: Install DirectX SDK
       run: |
         choco install directx-sdk -y
         echo "DirectX SDK Installed at: $(Get-ChildItem -Path 'C:\Program Files (x86)\Windows Kits\*' -Filter 'Windows Kits' -Recurse | Select-Object -ExpandProperty FullName)"
-
-    - name: Setup MSBuild environment
-      shell: cmd
-      run: |
-        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
 
     - name: Build Solution
       run: |
