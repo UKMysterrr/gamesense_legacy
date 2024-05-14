@@ -20,7 +20,7 @@ jobs:
               uses: microsoft/setup-msbuild@v1.0.2
 
             - name: Install CMake
-              uses: kitware/setup-cmake@v1.4.0
+              uses: microsoft/setup-cmake@v1.0.0
 
             - name: Configure CMake
               run: cmake -B build
@@ -41,3 +41,4 @@ jobs:
                   ./build/Stable/*.dll
                   ./build/Developer/*.dll
                   ./build/Beta/*.dll
+
