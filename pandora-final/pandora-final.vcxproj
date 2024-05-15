@@ -59,7 +59,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Stable build|Win32'">
     <IncludePath>$(ProjectDir)Libraries;$(ProjectDir)Include;$(ProjectDir)Libraries\stb;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)Libraries;$(ProjectDir)Include;$(ProjectDir)Libraries\x86;$(NETFXKitsDir)Lib\um\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)Libraries;$(ProjectDir)Include;$(NETFXKitsDir)Lib\um\x86;$(LibraryPath)</LibraryPath>
     <TargetExt>.dll</TargetExt>
     <IntDir>$(SolutionDir)$(Configuration)\Intermediate\</IntDir>
     <GenerateManifest>false</GenerateManifest>
@@ -67,7 +67,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'">
     <IncludePath>$(ProjectDir)Libraries;$(ProjectDir)Include;$(ProjectDir)Libraries\stb;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)Libraries;$(ProjectDir)Include;$(ProjectDir)Libraries\x86;$(NETFXKitsDir)Lib\um\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)Libraries;$(ProjectDir)Include;$(NETFXKitsDir)Lib\um\x86;$(LibraryPath)</LibraryPath>
     <TargetExt>.dll</TargetExt>
     <IntDir>$(SolutionDir)$(Configuration)\Intermediate\</IntDir>
     <LinkIncremental>false</LinkIncremental>
@@ -75,14 +75,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>$(ProjectDir)Libraries;$(ProjectDir)Include;$(ProjectDir)Libraries\stb;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)Libraries;$(ProjectDir)Include;$(ProjectDir)Libraries\x86;$(NETFXKitsDir)Lib\um\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)Libraries;$(ProjectDir)Include;$(NETFXKitsDir)Lib\um\x86;$(LibraryPath)</LibraryPath>
     <TargetExt>.dll</TargetExt>
     <IntDir>$(SolutionDir)$(Configuration)\Intermediate\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Beta|Win32'">
     <IncludePath>$(ProjectDir)Libraries;$(ProjectDir)Include;$(ProjectDir)Libraries\stb;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)Libraries;$(ProjectDir)Include;$(ProjectDir)Libraries\x86;$(NETFXKitsDir)Lib\um\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)Libraries;$(ProjectDir)Include;$(NETFXKitsDir)Lib\um\x86;$(LibraryPath)</LibraryPath>
     <TargetExt>.dll</TargetExt>
     <IntDir>$(SolutionDir)$(Configuration)\Intermediate\</IntDir>
     <GenerateManifest>false</GenerateManifest>
