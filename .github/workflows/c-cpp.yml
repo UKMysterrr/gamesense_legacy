@@ -45,11 +45,11 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: gamemesense
-          path: gamemesense/bin/Release/*.dll
+          path: gamesense_legacy/Release/*.dll
 
       - name: Upload PDBs
         uses: actions/upload-artifact@v2
         with:
           name: gamemesense
-          path: gamemesense/bin/Release/*.pdb
+          path: gamesense_legacy/Release/*.pdb
 
