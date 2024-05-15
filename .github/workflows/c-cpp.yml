@@ -73,11 +73,11 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: gamemesense
-          path: $GITHUB_WORKSPACE//Release/*.dll
+          path: D:\a\gamesense_legacy\gamesense_legacy/release/*.dll
 
       - name: Upload PDBs
         uses: actions/upload-artifact@v2
         with:
           name: gamemesense
-          path: $GITHUB_WORKSPACE//Release/*.pdb
+          path: D:\a\gamesense_legacy\gamesense_legacy/release/*.pdb
 
