@@ -1,4 +1,4 @@
-<!-- FILEPATH: /UKMysterrr/gamesense_legacy/.github/workflows/c-cpp.yml -->
+FILEPATH: /UKMysterrr/gamesense_legacy/.github/workflows/c-cpp.yml
 
 This GitHub Actions workflow is used to build DLL versions of the `gamemesense.sln` solution file. It is triggered on pushes to the `main` branch and pull requests targeting the `main` branch.
 
