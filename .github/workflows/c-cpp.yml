@@ -19,7 +19,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1.0.2
 
       - name:  Config DXSDK_DIR
-        run:   echo ::set-env name=DXSDK_DIR::$HOME/cache/
+        run:   echo "DXSDK_DIR=$HOME/cache/" >> $GITHUB_ENV
         shell: bash
 
       - name: Cache DirectX SDK
