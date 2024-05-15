@@ -1,3 +1,31 @@
+<!-- FILEPATH: /UKMysterrr/gamesense_legacy/.github/workflows/c-cpp.yml -->
+
+This GitHub Actions workflow is used to build DLL versions of the `gamemesense.sln` solution file. It is triggered on pushes to the `main` branch and pull requests targeting the `main` branch.
+
+The workflow runs on a Windows 2019 runner.
+
+## Jobs
+
+### build
+
+This job performs the following steps:
+
+1. Checks out the repository using the `actions/checkout` action.
+2. Sets up MSVC using the `microsoft/setup-msbuild` action.
+3. Configures the `DXSDK_DIR` environment variable.
+4. Configures the `SolutionDir` environment variable.
+5. Configures the `OutDir` environment variable.
+6. Caches the DirectX SDK using the `actions/cache` action.
+7. Builds the DLL versions of the `gamemesense.sln` solution file using the `msbuild` command.
+8. Uploads the built DLLs as artifacts using the `actions/upload-artifact` action.
+9. Uploads the PDBs (Program Database) files as artifacts using the `actions/upload-artifact` action.
+
+The artifacts are uploaded with the name `gamemesense` and include all the DLL and PDB files located in the `Release` directory of the repository.
+
+Note: The `DXSDK-Dep` directory is expected to be present in the repository's root directory.
+
+For more information on GitHub Actions, refer to the [GitHub Actions documentation](https://docs.github.com/en/actions).
+
 name: Build DLL versions of gamemesense.sln
 
 on:
@@ -45,11 +73,11 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: gamemesense
-          path: gamesense_legacy/Release/*.dll
+          path: $GITHUB_WORKSPACE//Release/*.dll
 
       - name: Upload PDBs
         uses: actions/upload-artifact@v2
         with:
           name: gamemesense
-          path: gamesense_legacy/Release/*.pdb
+          path: $GITHUB_WORKSPACE//Release/*.pdb
 
