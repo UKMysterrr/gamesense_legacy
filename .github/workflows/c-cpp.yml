@@ -37,10 +37,15 @@ jobs:
         run: |
           msbuild gamemesense.sln /p:Configuration=Release /p:Platform=x86
 
-      - name: Upload Artifacts
+      - name: Upload DLLs
         uses: actions/upload-artifact@v2
         with:
           name: gamemesense
           path: gamemesense/bin/Release/*.dll
+
+      - name: Upload PDBs
+        uses: actions/upload-artifact@v2
+        with:
+          name: gamemesense
           path: gamemesense/bin/Release/*.pdb
 
