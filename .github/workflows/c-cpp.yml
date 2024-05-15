@@ -59,11 +59,10 @@ jobs:
         shell: bash
 
       - name: Cache DirectX SDK
-        id:   cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
-          path: ~/cache
-          key:  cache
+          path: DXSDK-Dep
+          key: DXSDK-Dep
 
       - name: Build DLL versions of gamemesense.sln
         run: |
@@ -72,12 +71,12 @@ jobs:
       - name: Upload DLLs
         uses: actions/upload-artifact@v2
         with:
-          name: gamemesense
+          name: gamemesense_dll
           path: D:\a\gamesense_legacy\gamesense_legacy/release/*.dll
 
       - name: Upload PDBs
         uses: actions/upload-artifact@v2
         with:
-          name: gamemesense
+          name: gamemesense_pdb
           path: D:\a\gamesense_legacy\gamesense_legacy/release/*.pdb
 
