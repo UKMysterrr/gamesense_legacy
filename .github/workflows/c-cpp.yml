@@ -26,6 +26,10 @@ jobs:
         run:   echo "SolutionDir=$GITHUB_WORKSPACE/release" >> $GITHUB_ENV
         shell: bash
 
+      - name: Config OutDir
+        run:   echo "OutDir=$GITHUB_WORKSPACE/release" >> $GITHUB_ENV
+        shell: bash
+
       - name: Cache DirectX SDK
         id:   cache
         uses: actions/cache@v1
